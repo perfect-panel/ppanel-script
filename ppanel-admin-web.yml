@@ -2,7 +2,7 @@ version: '3'
 
 services:
   ppanel-admin-web:
-    image: ppanel/ppanel-admin-web:latest
+    image: ppanel/ppanel-admin-web:beta
     ports:
       - '3000:3000'
     environment:
