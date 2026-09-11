@@ -20,12 +20,15 @@ Logger:
   MaxSize: 0
   Rotation: daily
   FileTimeFormat: 2025-01-01T00:00:00.000Z00:00
-MySQL:
-  Addr: ppanel-db:3306
+# 【键名是 Database 不是 MySQL】上游把 MySQL: 标为 Deprecated，仍能读但走
+# 兼容路径。Config 的内容随 Driver 变，不能沿用 MySQL 那串 charset 参数。
+Database:
+  Driver: postgres
+  Addr: ppanel-db:5432
   Dbname: ppanel
   Username: ppanel
   Password: ppanelpassword
-  Config: charset=utf8mb4&parseTime=true&loc=Asia%2FShanghai
+  Config: sslmode=disable&TimeZone=Asia/Shanghai&application_name=perfect-panel
   MaxIdleConns: 10
   MaxOpenConns: 10
   SlowThreshold: 1000

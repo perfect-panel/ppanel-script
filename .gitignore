@@ -1,0 +1,14 @@
+# Local agent instructions
+AGENT.md
+AGENTS.md
+agent.md
+agents.md
+CLAUDE.md
+claude.md
+BRANCH_STRATEGY.md
+
+# compose 起栈时生成的数据卷。db/ 是 Postgres 的数据目录（近两千个文件，
+# 还包含库里的真实数据），cache/ 是 Redis 的。踩过一次：没有这两行，
+# docker compose up 之后一个 git add -A 就把整个数据库提交了进去。
+db/
+cache/
